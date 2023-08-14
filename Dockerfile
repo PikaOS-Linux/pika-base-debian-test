@@ -5,4 +5,5 @@ RUN pacman -Syu --noconfirm
 RUN pacman -S --needed git base-devel --noconfirm
 RUN git clone https://aur.archlinux.org/yay.git
 RUN cd yay
-RUN makepkg -si  --noconfirm
+RUN sudo -u nobody makepkg -s --noconfirm
+RUN pacman -U ./yay*.pkg* --noconfirm
