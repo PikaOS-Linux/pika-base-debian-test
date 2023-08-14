@@ -2,8 +2,9 @@
 # Bump for rebuild on 14/08/2023 17:30 UTC +3
 FROM archlinux:latest
 RUN pacman -Syu --noconfirm
-RUN pacman -S --needed git base-devel --noconfirm
-RUN sudo -u nobody git clone https://aur.archlinux.org/yay.git
-RUN cd yay
-RUN sudo -u nobody makepkg -s --noconfirm
-RUN pacman -U ./yay*.pkg* --noconfirm
+RUN pacman -S --needed git wget base-devel --noconfirm
+RUN https://github.com/Jguer/yay/releases/download/v12.1.2/yay_12.1.2_x86_64.tar.gz
+RUN tar -xf ./yay_12.1.2_x86_64.tar.gz
+RUN mv ./yay_12.1.2_x86_64/yay /usr/bin/
+RUN sudo -u nobody yay -Sy
+RUN sudo -u nobody yay -S yay
