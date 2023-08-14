@@ -9,5 +9,5 @@ RUN mv ./yay_12.1.2_x86_64/yay /usr/bin/
 # Root DANGEROUS BLAH BLAH BLAH
 RUN useradd builduser -m
 RUN passwd -d builduser
-RUN printf 'builduser ALL=(ALL) ALL\n' | tee -a /etc/sudoers # Allow the builduser passwordless sudo
-RUN sudo -u builduser bash -c 'cd ~ && yay -Sy && yay -S yay --noconfirm'
+RUN printf 'builduser ALL=(ALL) ALL\n' | tee -a /etc/sudoers
+RUN sudo -u builduser bash -c 'cd ~ && yay -S yay-bin --noconfirm'
