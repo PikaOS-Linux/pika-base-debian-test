@@ -54,24 +54,25 @@ wget https://github.com/CosmicFusion/debian-bleedingedge/raw/main/deb-multimedia
 # Setup apt configration
 mkdir -p  /etc/apt/preferences.d/
 tee /etc/apt/preferences.d/0-pika-debian-settings <<'EOF'
+# Blacklist Packages from being pulled from debian experimental
+Package: *libwebrtc-audio-processing*
+Pin: release a=experimental
+Pin-Priority: 100
+
 # Lower Debians's priority under pika's
 Package: *
 Pin: release a=experimental   
 Pin-Priority: 400
 
-
 Package: *
 Pin: release o=Debian
 Pin-Priority: 400
 
-Package: *libwebrtc-audio-processing*
-Pin: release o=Unofficial Multimedia Packages
-Pin-Priority: 100
-
 Package: *
 Pin: release o=Unofficial Multimedia Packages
 Pin-Priority: 400
 
+# Give pika lowest priority because we don't want it sources overwriting
 Package: *
 Pin: release a=pikauwu,c=main
 Pin-Priority: 390
