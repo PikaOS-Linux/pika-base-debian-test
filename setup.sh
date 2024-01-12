@@ -64,13 +64,17 @@ Package: *
 Pin: release o=Debian
 Pin-Priority: 400
 
+Package: *libwebrtc-audio-processing*
+Pin: release o=Unofficial Multimedia Packages
+Pin-Priority: 100
+
 Package: *
 Pin: release o=Unofficial Multimedia Packages
 Pin-Priority: 400
 
 Package: *
 Pin: release a=pikauwu,c=main
-Pin-Priority: 500
+Pin-Priority: 390
 EOF
 
 tee /etc/apt/preferences.d/1-pika-radeon-settings <<'EOF'
