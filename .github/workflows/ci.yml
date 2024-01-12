@@ -1,4 +1,4 @@
-name: pika archlinux with yay docker image
+name: Debian bleeding edge docker image
 
 on:
   push:
@@ -15,7 +15,7 @@ on:
   pull_request:
 
 env:
-  IMAGE_NAME: archlinux-yay
+  IMAGE_NAME: debian-bleedingedge
 
 jobs:
   # Push image to GitHub Packages.
