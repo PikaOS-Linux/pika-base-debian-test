@@ -48,7 +48,7 @@ EOF
 
 # Get keyrings
 mkdir -p /etc/apt/keyrings/
-wget https://github.com/PikaOS-Linux/pkg-pika-sources/blob/main/pika-sources/usr/share/apt-pika/apt/keyrings/pika-keyring.gpg.key -O /etc/apt/keyrings/pika-keyring.gpg.key
+wget https://github.com/CosmicFusion/debian-bleedingedge/raw/main/pika-keyring.gpg.key -O /etc/apt/keyrings/pika-keyring.gpg.key
 wget https://github.com/CosmicFusion/debian-bleedingedge/raw/main/deb-multimedia-keyring.gpg -O /etc/apt/keyrings/deb-multimedia-keyring.gpg
 
 # Setup apt configration
