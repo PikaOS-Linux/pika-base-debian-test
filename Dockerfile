@@ -9,4 +9,4 @@ RUN ./setup.sh
 RUN apt update
 RUN apt full-upgrade -y
 RUN ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y tzdata software-properties-common sudo git bc gpg gpg-agent bison build-essential ccache cmake cpio fakeroot flex git kmod libelf-dev libncurses5-dev libssl-dev lz4 qtbase5-dev rsync schedtool wget zstd tar reprepro devscripts dh-make rpm2cpio
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y tzdata software-properties-common sudo git bc gpg gpg-agent bison build-essential ccache cmake cpio fakeroot flex git kmod libelf-dev libncurses5-dev libssl-dev lz4 qtbase5-dev rsync schedtool wget zstd tar aptly devscripts dh-make rpm2cpio
