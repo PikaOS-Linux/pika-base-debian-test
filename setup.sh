@@ -46,6 +46,9 @@ X-Repolib-Default-Mirror: https://www.deb-multimedia.org/
 Signed-By: /etc/apt/keyrings/deb-multimedia-keyring.gpg
 EOF
 
+# Workarounds Repo
+echo "deb [trusted=yes arch=amd64] https://raw.githubusercontent.com/cosmicfusion/debian-workaround-packages-repo/main sid main" > /etc/apt/sources.list.d/cosmo-workarounds.list
+
 # Get keyrings
 mkdir -p /etc/apt/keyrings/
 wget https://github.com/CosmicFusion/debian-bleedingedge/raw/main/pika-keyring.gpg.key -O /etc/apt/keyrings/pika-keyring.gpg.key
@@ -93,7 +96,7 @@ Pin-Priority: 100
 
 Package: *
 Pin: release c=rocm
-Pin-Priority: 450
+Pin-Priority: 400
 
 Package: amdgpu-core amdgpu-pro-core amdgpu-dkms amdgpu-pro-lib32
 Pin: release a=*
