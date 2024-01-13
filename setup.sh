@@ -47,7 +47,7 @@ Signed-By: /etc/apt/keyrings/deb-multimedia-keyring.gpg
 EOF
 
 # Workarounds Repo
-echo "deb [trusted=yes arch=amd64] https://raw.githubusercontent.com/cosmicfusion/debian-workaround-packages-repo/main sid main" > /etc/apt/sources.list.d/cosmo-workarounds.list
+echo "deb [trusted=yes] https://raw.githubusercontent.com/cosmicfusion/debian-workaround-packages-repo/main sid main" > /etc/apt/sources.list.d/cosmo-workarounds.list
 
 # Get keyrings
 mkdir -p /etc/apt/keyrings/
