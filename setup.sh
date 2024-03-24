@@ -38,12 +38,24 @@ EOF
 tee /etc/apt/sources.list.d/dmo.sources <<'EOF'
 X-Repolib-Name: Multimedia Sources
 Enabled: yes
-Types: deb
+Types: deb deb-src
 URIs: https://www.deb-multimedia.org
 Suites: sid
 Components: main non-free
 X-Repolib-Default-Mirror: https://www.deb-multimedia.org/
 Signed-By: /etc/apt/keyrings/deb-multimedia-keyring.gpg
+EOF
+
+# Add Neon Src
+tee /etc/apt/sources.list.d/neon.sources <<'EOF'
+X-Repolib-Name: KDE Neon Sources
+Enabled: yes
+Types: deb-src
+URIs: http://archive.neon.kde.org/user/
+Suites: jammy
+Components: main
+X-Repolib-Default-Mirror: http://archive.neon.kde.org/user/
+Signed-By: /etc/apt/keyrings/kde-neon-keyring.gpg
 EOF
 
 # # Workarounds Repo
@@ -53,6 +65,7 @@ EOF
 mkdir -p /etc/apt/keyrings/
 wget https://github.com/PikaOS-Linux/pika-base-debian-container/raw/main/pika-keyring.gpg.key -O /etc/apt/keyrings/pika-keyring.gpg.key
 wget https://github.com/PikaOS-Linux/pika-base-debian-container/raw/main/deb-multimedia-keyring.gpg -O /etc/apt/keyrings/deb-multimedia-keyring.gpg
+wget https://github.com/PikaOS-Linux/pika-base-debian-container/raw/main/kde-neon-keyring.gpg -O /etc/apt/keyrings/kde-neon-keyring.gpg
 
 # Setup apt configration
 mkdir -p  /etc/apt/preferences.d/
@@ -74,6 +87,11 @@ Pin-Priority: 400
 Package: *
 Pin: release o=Unofficial Multimedia Packages
 Pin-Priority: 400
+
+# Neon blacklist
+Package: neon-desktop base-files
+Pin: origin archive.neon.kde.org
+Pin-Priority: -1
 
 # Give pika lowest priority because we don't want it sources overwriting
 Package: *
