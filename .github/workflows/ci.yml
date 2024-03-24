@@ -1,4 +1,4 @@
-name: Debian bleeding edge docker image
+name: Debian base custom bleeding edge docker image for pika
 
 on:
   push:
@@ -15,7 +15,7 @@ on:
   pull_request:
 
 env:
-  IMAGE_NAME: debian-bleedingedge
+  IMAGE_NAME: pika-base-debian-container
 
 jobs:
   # Push image to GitHub Packages.
