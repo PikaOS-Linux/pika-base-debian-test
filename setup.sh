@@ -21,18 +21,18 @@ X-Repolib-Default-Mirror: http://deb.debian.org/debian
 Signed-by: /usr/share/keyrings/debian-archive-keyring.gpg
 EOF
 
-# Add Pika Repos
-tee /etc/apt/sources.list.d/system.sources <<'EOF'
-X-Repolib-Name: PikaOS System Sources
-Enabled: yes
-Types: deb
-URIs: https://ppa.pika-os.com/
-Suites: pikauwu
-Components: main amdgpu rocm
-X-Repolib-ID: system
-X-Repolib-Default-Mirror: https://ppa.pika-os.com/
-Signed-By: /etc/apt/keyrings/pika-keyring.gpg.key
-EOF
+# # Add Pika Repos
+# tee /etc/apt/sources.list.d/system.sources <<'EOF'
+# X-Repolib-Name: PikaOS System Sources
+# Enabled: yes
+# Types: deb
+# URIs: https://ppa.pika-os.com/
+# Suites: pikauwu
+# Components: main amdgpu rocm
+# X-Repolib-ID: system
+# X-Repolib-Default-Mirror: https://ppa.pika-os.com/
+# Signed-By: /etc/apt/keyrings/pika-keyring.gpg.key
+# EOF
 
 # Add DMO Repos
 tee /etc/apt/sources.list.d/dmo.sources <<'EOF'
@@ -46,13 +46,13 @@ X-Repolib-Default-Mirror: https://www.deb-multimedia.org/
 Signed-By: /etc/apt/keyrings/deb-multimedia-keyring.gpg
 EOF
 
-# Workarounds Repo
-echo "deb [trusted=yes] https://raw.githubusercontent.com/cosmicfusion/debian-workaround-packages-repo/main sid main" > /etc/apt/sources.list.d/cosmo-workarounds.list
+# # Workarounds Repo
+# echo "deb [trusted=yes] https://raw.githubusercontent.com/cosmicfusion/debian-workaround-packages-repo/main sid main" > /etc/apt/sources.list.d/cosmo-workarounds.list
 
 # Get keyrings
 mkdir -p /etc/apt/keyrings/
-wget https://github.com/CosmicFusion/debian-bleedingedge/raw/main/pika-keyring.gpg.key -O /etc/apt/keyrings/pika-keyring.gpg.key
-wget https://github.com/CosmicFusion/debian-bleedingedge/raw/main/deb-multimedia-keyring.gpg -O /etc/apt/keyrings/deb-multimedia-keyring.gpg
+wget https://github.com/PikaOS-Linux/pika-base-debian-container/raw/main/pika-keyring.gpg.key -O /etc/apt/keyrings/pika-keyring.gpg.key
+wget https://github.com/PikaOS-Linux/pika-base-debian-container/raw/main/deb-multimedia-keyring.gpg -O /etc/apt/keyrings/deb-multimedia-keyring.gpg
 
 # Setup apt configration
 mkdir -p  /etc/apt/preferences.d/
