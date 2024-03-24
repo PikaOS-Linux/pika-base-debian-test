@@ -1,7 +1,6 @@
 name: Debian base custom bleeding edge docker image for pika
 
 on:
-  dispatch:
   push:
     # Publish `main` as Docker `latest` image.
     branches:
