@@ -55,7 +55,7 @@ URIs: http://archive.neon.kde.org/user/
 Suites: jammy
 Components: main
 X-Repolib-Default-Mirror: http://archive.neon.kde.org/user/
-Signed-By: /etc/apt/keyrings/kde-neon-keyring.gpg
+Signed-By: /etc/apt/keyrings/kde-neon-keyring.gpg.key
 EOF
 
 # # Workarounds Repo
@@ -65,7 +65,7 @@ EOF
 mkdir -p /etc/apt/keyrings/
 wget https://github.com/PikaOS-Linux/pika-base-debian-container/raw/main/pika-keyring.gpg.key -O /etc/apt/keyrings/pika-keyring.gpg.key
 wget https://github.com/PikaOS-Linux/pika-base-debian-container/raw/main/deb-multimedia-keyring.gpg -O /etc/apt/keyrings/deb-multimedia-keyring.gpg
-wget https://github.com/PikaOS-Linux/pika-base-debian-container/raw/main/kde-neon-keyring.gpg -O /etc/apt/keyrings/kde-neon-keyring.gpg
+wget https://github.com/PikaOS-Linux/pika-base-debian-container/raw/main/kde-neon-keyring.gpg.key -O /etc/apt/keyrings/kde-neon-keyring.gpg.key
 
 # Setup apt configration
 mkdir -p  /etc/apt/preferences.d/
