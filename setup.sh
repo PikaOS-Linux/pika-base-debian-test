@@ -21,7 +21,7 @@ X-Repolib-Default-Mirror: http://deb.debian.org/debian
 Signed-by: /usr/share/keyrings/debian-archive-keyring.gpg
 EOF
 
-# # Add Pika Repos
+# Add Pika Repos
 # tee /etc/apt/sources.list.d/system.sources <<'EOF'
 # X-Repolib-Name: PikaOS System Sources
 # Enabled: yes
