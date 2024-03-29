@@ -1,6 +1,8 @@
 name: Debian base custom bleeding edge docker image for pika
 
 on:
+  workflow_dispatch:
+  
   push:
     # Publish `main` as Docker `latest` image.
     branches:
