@@ -124,5 +124,3 @@ Package: amdgpu-core amdgpu-pro-core amdgpu-dkms amdgpu-pro-lib32
 Pin: release a=*
 Pin-Priority: -10
 EOF
-
-pika-pbuilder-amd64-init
