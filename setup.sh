@@ -75,6 +75,10 @@ Package: *libwebrtc-audio-processing*
 Pin: release a=experimental
 Pin-Priority: 100
 
+Package: *selinux*
+Pin: release a=experimental
+Pin-Priority: 100
+
 # Lower Debians's priority under pika's
 Package: *
 Pin: release a=experimental   
