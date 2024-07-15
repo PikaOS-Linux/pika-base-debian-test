@@ -15,14 +15,8 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Update apt cache
-      run: echo -e "Package: *\nPin: release a=experimental\nPin-Priority: 600" > /etc/apt/preferences.d/0-pika-debian-settings
-
-    - name: Update apt cache
-      run: apt-get update -y
-    
     - name: Generate apt pin and json files
-      run: ./gen-apt-config.py
+      run: ./gen-apt-config.sh
 
     - name: Setup git and push
       run: git config --global user.name 'Github Workflow Action' && git config --global user.email 'hotrod.master@hotmail.com' && git config --global --add safe.directory /__w/pika-base-debian-container/pika-base-debian-container && git add . && git commit -am"Commited by GH Action - gen-apt-config.yml" && git push
