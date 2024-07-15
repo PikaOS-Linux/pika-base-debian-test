@@ -35,7 +35,7 @@ for file in srcnames_files:
                 pkgname_lines.append(bin)
     file.close()
 
-with open (current_path + "/package_srcnames/package_pkgnames_overrides") as file:
+with open (current_path + "/package_pkgnames_overrides") as file:
     lines = file.readlines()
     for line in lines:
         pkgname_lines.append(line.strip())
