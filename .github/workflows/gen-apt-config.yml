@@ -18,8 +18,8 @@ jobs:
     - name: Update apt cache
       run: apt-get update -y
     
-    - name: Build Package
-      run: ./gen-apt-config.sh
+    - name: Generate apt pin and json files
+      run: ./gen-apt-config.py
 
     - name: Setup git and push
       run: git config --global user.name 'Github Workflow Action' && git config --global user.email 'hotrod.master@hotmail.com' && git config --global --add safe.directory /__w/debian-workaround-packages-repo/debian-workaround-packages-repo && git add . && git commit -am"Include Debfile file for qtbase-abi-5-15-10" && git push
