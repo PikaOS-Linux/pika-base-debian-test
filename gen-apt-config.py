@@ -47,6 +47,7 @@ apt_pin_packages = ""
 
 for pkg in pkgname_lines:
     apt_pin_packages += (pkg + " ")
+    apt_pin_packages += (pkg + "t64 ")
 
 silentremove("0-debian-exp-overrides")
 with open("0-debian-exp-overrides", "w") as file:
