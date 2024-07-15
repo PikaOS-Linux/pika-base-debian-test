@@ -35,6 +35,12 @@ for file in srcnames_files:
                 pkgname_lines.append(bin)
     file.close()
 
+with open (current_path + "/package_srcnames/package_pkgnames_overrides") as file:
+    lines = file.readlines()
+    for line in lines:
+        pkgname_lines.append(line.strip())
+    file.close()
+
 src_data = {
     'source_names': [source_name for source_name in srcname_lines],
 }

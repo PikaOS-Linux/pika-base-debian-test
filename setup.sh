@@ -55,9 +55,9 @@ wget https://github.com/PikaOS-Linux/pika-base-debian-container/raw/main/deb-mul
 mkdir -p /etc/apt/preferences.d/
 tee /etc/apt/preferences.d/0-pika-debian-settings <<'EOF'
 # Blacklist Packages from being pulled from debian experimental
-#Package: *libwebrtc-audio-processing* *selinux*
-#Pin: release a=experimental
-#Pin-Priority: -1
+Package: *libwebrtc-audio-processing* *selinux*
+Pin: release a=experimental
+Pin-Priority: -1
 
 Package: *
 Pin: release o=Unofficial Multimedia Packages
