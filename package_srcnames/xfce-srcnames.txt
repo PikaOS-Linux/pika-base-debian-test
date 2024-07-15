@@ -3,6 +3,7 @@ garcon
 gigolo
 libxfce4ui
 libxfce4util
+libxfce4windowing
 lightdm
 lightdm-gtk-greeter
 light-locker
