@@ -5,7 +5,7 @@ import apt_pkg
 import apt
 import json
 
-_APT_CONFIG_PIN="""Package: {PACKAGES}
+_APT_CONFIG_PIN="""Package:{PACKAGES}
 Pin: release a=experimental   
 Pin-Priority: 500
 """
@@ -33,6 +33,7 @@ for file in srcnames_files:
             bins = srcrecords.binaries
             for bin in bins:
                 pkgname_lines.append(bin)
+                pkgname_lines.append(bin + "t64")
     file.close()
 
 with open (current_path + "/package_pkgnames_overrides") as file:
@@ -52,8 +53,7 @@ pkg_data = {
 apt_pin_packages = ""
 
 for pkg in pkgname_lines:
-    apt_pin_packages += (pkg + " ")
-    apt_pin_packages += (pkg + "t64 ")
+    apt_pin_packages += (" " + pkg)
 
 silentremove("0-debian-exp-overrides")
 with open("0-debian-exp-overrides", "w") as file:

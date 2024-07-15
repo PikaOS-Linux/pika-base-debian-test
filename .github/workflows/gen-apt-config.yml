@@ -16,6 +16,9 @@ jobs:
     - uses: actions/checkout@v3
 
     - name: Update apt cache
+      run: echo -e "Package: *\nPin: release a=experimental\nPin-Priority: 600" > /etc/apt/preferences.d/0-pika-debian-settings
+
+    - name: Update apt cache
       run: apt-get update -y
     
     - name: Generate apt pin and json files
