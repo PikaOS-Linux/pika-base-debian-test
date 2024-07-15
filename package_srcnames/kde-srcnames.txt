@@ -237,7 +237,7 @@ kfilemetadata-kf5
 kfind
 kfloppy
 kfourinline
-kgamma	-
+kgamma
 kgamma5
 kgeography
 kgeotag
