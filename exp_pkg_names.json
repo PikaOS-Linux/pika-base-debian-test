@@ -3625,6 +3625,7 @@
         "gir1.2-xfconf-0",
         "xfdesktop4-data",
         "xfdesktop4",
-        "xfwm4"
+        "xfwm4",
+        "libqt5core5t64"
     ]
 }
