@@ -19,6 +19,7 @@ Suites: sid experimental
 Components: main contrib non-free non-free-firmware
 X-Repolib-Default-Mirror: http://deb.debian.org/debian
 Signed-by: /usr/share/keyrings/debian-archive-keyring.gpg
+Trusted: yes
 EOF
 
 # Add Pika Repos
@@ -32,6 +33,7 @@ Components: canary
 X-Repolib-ID: system
 X-Repolib-Default-Mirror: https://ppa.pika-os.com/
 Signed-By: /etc/apt/keyrings/pika-keyring.gpg.key
+Trusted: yes
 EOF
 
 # Add DMO Repos
@@ -44,6 +46,7 @@ Suites: sid
 Components: main non-free
 X-Repolib-Default-Mirror: https://www.deb-multimedia.org/
 Signed-By: /etc/apt/keyrings/deb-multimedia-keyring.gpg
+Trusted: yes
 EOF
 
 # Workarounds Repo
