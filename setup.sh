@@ -16,7 +16,7 @@ X-Repolib-Name: PikaOS System Sources
 Enabled: yes
 Types: deb
 URIs: https://ppa.pika-os.com/
-Suites: pikauwu
+Suites: pika
 Components: canary
 X-Repolib-ID: system
 X-Repolib-Default-Mirror: https://ppa.pika-os.com/
