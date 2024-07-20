@@ -12,4 +12,8 @@ RUN ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime
 # Reinstall all packages from canary
 RUN DEBIAN_FRONTEND=noninteractive aptitude reinstall '~i'
 # Standard stuff
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y tzdata software-properties-common sudo devscripts git eatmydata bc cowbuilder gpg gpg-agent bison build-essential ccache cmake cpio fakeroot flex git kmod libelf-dev libncurses5-dev libssl-dev lz4 qtbase5-dev rsync schedtool wget zstd tar aptly devscripts dh-make rpm2cpio ./pika-pbuilder.deb -o Dpkg::Options::="--force-confnew"
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y sudo devscripts git eatmydata bc cowbuilder gpg gpg-agent bison build-essential ccache cmake cpio fakeroot flex git kmod libelf-dev libncurses5-dev libssl-dev lz4 qtbase5-dev rsync schedtool wget zstd tar aptly devscripts dh-make rpm2cpio-o Dpkg::Options::="--force-confnew"
+# Test KDE
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y kde-full
+# Test GNOME
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y gnome-core
