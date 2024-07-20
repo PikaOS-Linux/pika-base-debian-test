@@ -26,3 +26,12 @@ Allow-Weak: yes
 Allow-Downgrade-To-Insecure: yes
 Trusted: yes
 EOF
+
+apt update
+DEBIAN_FRONTEND=noninteractive apt full-upgrade -y -o Dpkg::Options::="--force-confnew"
+RUN ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime
+# Reinstall all packages from canary
+dpkg --get-selections > selections
+dpkg --clear-selections
+dpkg --set-selections < selections
+DEBIAN_FRONTEND=noninteractive apt-get install --reinstall wget -y -o Dpkg::Options::="--force-confnew"
