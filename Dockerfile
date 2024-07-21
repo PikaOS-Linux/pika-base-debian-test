@@ -11,12 +11,14 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y curl vim  gnupg2 apt-trans
 # Test KDE
 #RUN DEBIAN_FRONTEND=noninteractive apt-get install -y kde-full -o Dpkg::Options::="--force-confnew"
 # Debug start
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y kde-full -o Dpkg::Options::="--force-confnew" || true
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y libqt5quick5 -o Dpkg::Options::="--force-confnew" || true
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y libkirigamiprivate6 -o Dpkg::Options::="--force-confnew" || true
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y gnome-settings-daemon -o Dpkg::Options::="--force-confnew" || true
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y gnome-control-center -o Dpkg::Options::="--force-confnew" || true
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y libpipewire-0.3-0t64 -o Dpkg::Options::="--force-confnew" || true
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y libspa-0.2-bluetooth -o Dpkg::Options::="--force-confnew" || true
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y gnome-core -o Dpkg::Options::="--force-confnew" || true
 RUN exit 1
 # Debug END
 # Test GNOME
