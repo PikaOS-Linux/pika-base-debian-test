@@ -16,7 +16,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y gnome-settings-daemon -o D
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y gnome-control-center -o Dpkg::Options::="--force-confnew" || true
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y libpipewire-0.3-0t64 -o Dpkg::Options::="--force-confnew" || true
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y libspa-0.2-bluetooth -o Dpkg::Options::="--force-confnew" || true
-exit 1
+RUN exit 1
 # Debug END
 # Test GNOME
 #RUN DEBIAN_FRONTEND=noninteractive apt-get install -y gnome-core -o Dpkg::Options::="--force-confnew"
