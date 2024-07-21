@@ -10,8 +10,9 @@ RUN ./setup.sh
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y curl vim  gnupg2 apt-transport-https netbase lsb-release apt-utils  debian-keyring debian-archive-keyring sudo systemd ifupdown rsyslog logrotate less bash-completion sudo devscripts git eatmydata bc cowbuilder gpg gpg-agent bison build-essential ccache cmake cpio fakeroot flex git kmod libelf-dev libncurses5-dev libssl-dev lz4 qtbase5-dev rsync schedtool wget zstd tar aptly devscripts dh-make rpm2cpio -o Dpkg::Options::="--force-confnew"
 # Test KDE
 #RUN DEBIAN_FRONTEND=noninteractive apt-get install -y kde-full -o Dpkg::Options::="--force-confnew"
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -yqml6-module-org-kde-kirigami -o Dpkg::Options::="--force-confnew"
 # Test GNOME
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y gnome-core -o Dpkg::Options::="--force-confnew"
+#RUN DEBIAN_FRONTEND=noninteractive apt-get install -y gnome-core -o Dpkg::Options::="--force-confnew"
 # Test after upgrade
 RUN DEBIAN_FRONTEND=noninteractive apt update
 RUN DEBIAN_FRONTEND=noninteractive apt full-upgrade -y -o Dpkg::Options::="--force-confnew"
