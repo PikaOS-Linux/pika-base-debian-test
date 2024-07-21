@@ -11,7 +11,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y curl vim  gnupg2 apt-trans
 # Test KDE
 #RUN DEBIAN_FRONTEND=noninteractive apt-get install -y kde-full -o Dpkg::Options::="--force-confnew"
 # Debug start
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y kde-plasma-desktop plasma-workspace-wayland -o Dpkg::Options::="--force-confnew" || true
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y kde-plasma-desktop -o Dpkg::Options::="--force-confnew" || true
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y kde-standard -o Dpkg::Options::="--force-confnew" || true
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y accountwizard -o Dpkg::Options::="--force-confnew" || true
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y kde-full -o Dpkg::Options::="--force-confnew" || true
