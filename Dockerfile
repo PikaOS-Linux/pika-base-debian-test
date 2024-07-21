@@ -12,6 +12,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y curl vim  gnupg2 apt-trans
 #RUN DEBIAN_FRONTEND=noninteractive apt-get install -y kde-full -o Dpkg::Options::="--force-confnew"
 # Debug start
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y kde-standard -o Dpkg::Options::="--force-confnew" || true
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y accountwizard -o Dpkg::Options::="--force-confnew" || true
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y kde-full -o Dpkg::Options::="--force-confnew" || true
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y libqt5quick5 -o Dpkg::Options::="--force-confnew" || true
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y libkirigamiprivate6 -o Dpkg::Options::="--force-confnew" || true
