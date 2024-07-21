@@ -27,9 +27,6 @@ Allow-Downgrade-To-Insecure: yes
 Trusted: yes
 EOF
 
-# Workarounds Repo
-echo "deb [trusted=yes] https://raw.githubusercontent.com/PikaOS-Linux/repo-debian-build-workarounds/main sid main" > /etc/apt/sources.list.d/deb-workarounds.list
-
 apt update
 DEBIAN_FRONTEND=noninteractive apt full-upgrade -y -o Dpkg::Options::="--force-confnew"
 RUN ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime
