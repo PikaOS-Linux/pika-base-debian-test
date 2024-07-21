@@ -21,10 +21,6 @@ Components: canary
 X-Repolib-ID: system
 X-Repolib-Default-Mirror: https://ppa.pika-os.com/
 Signed-By: /etc/apt/keyrings/pika-keyring.gpg.key
-Allow-Insecure: yes
-Allow-Weak: yes
-Allow-Downgrade-To-Insecure: yes
-Trusted: yes
 EOF
 
 apt update
