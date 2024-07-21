@@ -23,6 +23,10 @@ X-Repolib-Default-Mirror: https://ppa.pika-os.com/
 Signed-By: /etc/apt/keyrings/pika-keyring.gpg.key
 EOF
 
+# Get keyrings
+mkdir -p /etc/apt/keyrings/
+wget https://github.com/PikaOS-Linux/pika-base-debian-container/raw/main/pika-keyring.gpg.key -O /etc/apt/keyrings/pika-keyring.gpg.key
+
 apt update
 DEBIAN_FRONTEND=noninteractive apt full-upgrade -y -o Dpkg::Options::="--force-confnew"
 RUN ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime
