@@ -5,6 +5,7 @@ RUN apt update
 # Test KDE
 #RUN DEBIAN_FRONTEND=noninteractive apt-get install -y kde-full -o Dpkg::Options::="--force-confnew"
 # Debug start
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y libjavascriptcoregtk-6.0-1 libwebkitgtk-6.0-4 -o Dpkg::Options::="--force-confnew" || true
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y plasma-desktop -o Dpkg::Options::="--force-confnew" || true
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y kde-standard -o Dpkg::Options::="--force-confnew" || true
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y accountwizard -o Dpkg::Options::="--force-confnew" || true
